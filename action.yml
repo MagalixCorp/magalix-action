@@ -1,0 +1,21 @@
+name: Magalix
+author: Magalix Corporation
+description: 'Github action runs Magalix policies against IaC files'
+
+inputs:
+  webhook:
+    description: magalix guard webhook
+    required: true
+  directory:
+    description: root directory to scan
+    default: '.'
+    required: false
+
+runs:
+  using: docker
+  image: magalixcorp/iac-scanner:dev
+  args:
+    - --webhook
+    - ${{ inputs.webhook }}
+    - --directory
+    - ${{ inputs.directory }}
