@@ -14,6 +14,8 @@ inputs:
 runs:
   using: docker
   image: docker://magalixcorp/iac-scanner:dev
+  env:
+    GITHUB_TOKEN: ${{ github.token }}
   args:
     - --webhook
     - ${{ inputs.webhook }}
