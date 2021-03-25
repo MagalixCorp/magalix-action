@@ -13,7 +13,7 @@ inputs:
 
 runs:
   using: docker
-  image: magalixcorp/iac-scanner:dev
+  image: docker://magalixcorp/iac-scanner:dev
   args:
     - --webhook
     - ${{ inputs.webhook }}
