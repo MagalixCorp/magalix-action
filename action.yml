@@ -10,14 +10,18 @@ inputs:
     description: root directory to scan
     default: '.'
     required: false
+  token:
+    default: ${{ github.token }}
 
 runs:
   using: docker
   image: docker://magalixcorp/iac-scanner:dev
   env:
-    GITHUB_TOKEN: ${{ github.token }}
+    GITHUB_TOKEN: 
   args:
     - --webhook
     - ${{ inputs.webhook }}
     - --directory
     - ${{ inputs.directory }}
+    - --gh-token
+    - ${{ inputs.token }}
