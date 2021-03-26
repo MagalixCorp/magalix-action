@@ -5,7 +5,7 @@ Identify violations in your IaC files using Magalix Action.
 ## Usage
 
 ```yml
-  - uses: magalixcorp/magalix-action@dev
+  - uses: magalixcorp/magalix-action@main
     with:
       webhook: ${{ secrets.GUARD_WEBHOOK }}
 ```
@@ -28,7 +28,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Magalix
-      uses: magalixcorp/magalix-action@dev
+      uses: magalixcorp/magalix-action@main
       with:
         webhook: ${{ secrets.GUARD_WEBHOOK }}
 ```
@@ -39,8 +39,8 @@ jobs:
 
 | Name            | Description               | Required  | Default         |
 | --------------- | ------------------------- | --------- | --------------- |
-| `webhook`       | Guard webhook url         | Yes       |                 |
-| `directory`     | Root directory to scan    | No        | repository root |
+| `webhook`       | Guard webhook url         |    Yes    |                 |
+| `directory`     | Root directory to scan    |    No     | repository root |
 
 
 
