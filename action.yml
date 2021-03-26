@@ -1,6 +1,6 @@
 name: Magalix
 author: Magalix Corporation
-description: 'Github action runs Magalix policies against IaC files'
+description: Identify violations in your IaC files using Magalix Action
 
 inputs:
   webhook:
@@ -13,11 +13,13 @@ inputs:
   token:
     default: ${{ github.token }}
 
+branding:
+  color: blue
+  icon: shield
+
 runs:
   using: docker
   image: docker://magalixcorp/iac-scanner:dev
-  env:
-    GITHUB_TOKEN: 
   args:
     - --webhook
     - ${{ inputs.webhook }}
@@ -25,3 +27,4 @@ runs:
     - ${{ inputs.directory }}
     - --gh-token
     - ${{ inputs.token }}
+    - --gh-code-scanning

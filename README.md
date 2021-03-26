@@ -1,29 +1,19 @@
-# Magalix IaC Scanner
+# Magalix Github Action
+
+Identify violations in your IaC files using Magalix Action.
 
 ## Usage
 
 ```yml
-    uses: magalixcorp/magalix-action@dev
+  - uses: magalixcorp/magalix-action@dev
     with:
-        webhook: ${{ secrets.GUARD_WEBHOOK }}
+      webhook: ${{ secrets.GUARD_WEBHOOK }}
 ```
 
-
-## Parameters
-
-| Name            | Description               | Required  | Default         |
-| --------------- | ------------------------- | --------- | --------------- |
-| `webhook`       | Guard webhook url         | Yes       |                 |
-| `directory`     | Root directory to scan    | No        | repository root |
-
-
-
-## Full Example
-
+Full example of the workflow
 
 ```yml
 # .github/workflows/magalix.yml
-
 name: Magalix
 
 on:
@@ -42,3 +32,26 @@ jobs:
       with:
         webhook: ${{ secrets.GUARD_WEBHOOK }}
 ```
+
+
+
+## Parameters
+
+| Name            | Description               | Required  | Default         |
+| --------------- | ------------------------- | --------- | --------------- |
+| `webhook`       | Guard webhook url         | Yes       |                 |
+| `directory`     | Root directory to scan    | No        | repository root |
+
+
+
+
+## Result Report
+![result report](./assets/screenshot-1.png)
+
+
+
+## Github Code Scanning
+
+Magalix action supports [Github Code Scanning](https://docs.github.com/en/code-security/secure-coding/about-code-scanning).
+
+![github code scanning](./assets/screenshot-2.png)
