@@ -19,7 +19,7 @@ branding:
 
 runs:
   using: docker
-  image: docker://magalixcorp/iac-scanner:v0.0.1
+  image: docker://magalixcorp/iac-scanner:dev
   args:
     - --webhook
     - ${{ inputs.webhook }}
