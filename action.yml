@@ -20,8 +20,8 @@ branding:
 runs:
   using: docker
   image: docker://magalixcorp/iac-scanner:dev
-  entrypoint: /entrypoint.sh
   args:
+    - mglx-scanner
     - --webhook
     - ${{ inputs.webhook }}
     - --directory
