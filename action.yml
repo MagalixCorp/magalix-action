@@ -20,6 +20,7 @@ branding:
 runs:
   using: docker
   image: docker://magalixcorp/iac-scanner:dev
+  entrypoint: /entrypoint.sh
   args:
     - --webhook
     - ${{ inputs.webhook }}
