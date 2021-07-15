@@ -19,7 +19,7 @@ branding:
 
 runs:
   using: docker
-  image: docker://magalixcorp/iac-scanner:dev
+  image: docker://magalixcorp/iac-scanner:test
   args:
     - mglx-scanner
     - --webhook
@@ -29,3 +29,4 @@ runs:
     - --gh-token
     - ${{ inputs.token }}
     - --gh-code-scanning
+    - --auto-fix
