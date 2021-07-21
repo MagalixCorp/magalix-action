@@ -12,6 +12,10 @@ inputs:
     required: false
   token:
     default: ${{ github.token }}
+  branch:
+    default: ${{ github.head_ref || github.ref }}
+  commit:
+    default: ${{ github.event.pull_request.head.sha || github.sha }}
 
 branding:
   color: blue
@@ -28,5 +32,9 @@ runs:
     - ${{ inputs.directory }}
     - --gh-token
     - ${{ inputs.token }}
+    - --branch
+    - ${{ inputs.branch }}
+    - --commit
+    - ${{ inputs.commit }}
     - --gh-code-scanning
     - --auto-fix
