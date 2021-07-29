@@ -23,7 +23,7 @@ branding:
 
 runs:
   using: docker
-  image: docker://magalixcorp/iac-scanner:dev
+  image: docker://magalixcorp/iac-scanner:main
   args:
     - mglx-scanner
     - --webhook
