@@ -12,6 +12,10 @@ inputs:
     required: false
   token:
     default: ${{ github.token }}
+  branch:
+    default: ${{ github.head_ref || github.ref }}
+  commit:
+    default: ${{ github.event.pull_request.head.sha || github.sha }}
 
 branding:
   color: blue
@@ -19,12 +23,17 @@ branding:
 
 runs:
   using: docker
-  image: docker://magalixcorp/iac-scanner:v0.0.1
+  image: docker://magalixcorp/iac-scanner:dev
   args:
+    - mglx-scanner
     - --webhook
     - ${{ inputs.webhook }}
     - --directory
     - ${{ inputs.directory }}
     - --gh-token
     - ${{ inputs.token }}
+    - --branch
+    - ${{ inputs.branch }}
+    - --commit
+    - ${{ inputs.commit }}
     - --gh-code-scanning
