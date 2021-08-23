@@ -37,3 +37,4 @@ runs:
     - --commit
     - ${{ inputs.commit }}
     - --gh-code-scanning
+    - --auto-fix
