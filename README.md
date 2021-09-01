@@ -30,10 +30,12 @@ jobs:
 
 ## Parameters
 
-| Name            | Description               | Required  | Default         |
-| --------------- | ------------------------- | --------- | --------------- |
-| `webhook`       | Guard webhook url         |    Yes    |                 |
-| `directory`     | Root directory to scan    |    No     | repository root |
+| Name                | Description                 | Required  | Default         |
+| ------------------- | --------------------------- | --------- | --------------- |
+| `webhook`           | Guard webhook url           |    Yes    |                 |
+| `directory`         | Root directory to scan      |    No     | repository root |
+| `gh-code-scanning`  | Enable github code scanning |    No     | yes             |
+| `auto-remediation`  | Enable auto remediation     |    No     | yes             |
 
 
 
