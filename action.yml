@@ -16,6 +16,12 @@ inputs:
     default: ${{ github.head_ref || github.ref }}
   commit:
     default: ${{ github.event.pull_request.head.sha || github.sha }}
+  gh-code-scanning:
+    description: enable github code scanning
+    default: true
+  auto-remediation:
+    description: enable auto-remediation
+    default: true
 
 branding:
   color: blue
@@ -36,5 +42,5 @@ runs:
     - ${{ inputs.branch }}
     - --commit
     - ${{ inputs.commit }}
-    - --gh-code-scanning
-    - --auto-fix
+    - ${{ inputs.gh-code-scanning == 'true' && '--gh-code-scanning' || '' }}
+    - ${{ inputs.auto-remediation == 'true' && '--auto-fix' || '' }}
