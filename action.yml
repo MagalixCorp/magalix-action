@@ -16,7 +16,7 @@ inputs:
     default: ${{ github.head_ref || github.ref }}
   commit:
     default: ${{ github.event.pull_request.head.sha || github.sha }}
-  auto-fix:
+  auto_fix:
     description: enable auto-remediation
     default: true
     required: false
@@ -41,4 +41,4 @@ runs:
     - --commit
     - ${{ inputs.commit }}
     - --gh-code-scanning
-    - ${{ inputs.auto-fix == 'true' && '--auto-fix' || '' }}
+    - ${{ inputs.auto_fix == 'true' && '--auto-fix' || '' }}
