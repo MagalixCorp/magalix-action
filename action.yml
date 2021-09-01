@@ -16,7 +16,7 @@ inputs:
     default: ${{ github.head_ref || github.ref }}
   commit:
     default: ${{ github.event.pull_request.head.sha || github.sha }}
-  auto_fix:
+  auto-fix:
     description: enable auto-remediation
     default: true
     required: false
