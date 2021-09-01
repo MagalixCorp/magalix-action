@@ -41,4 +41,4 @@ runs:
     - --commit
     - ${{ inputs.commit }}
     - --gh-code-scanning
-    - ${{ inputs.auto_fix && '--auto-fix' || '' }}
+    - ${{ inputs.auto-fix == 'true' && '--auto-fix' || '' }}
