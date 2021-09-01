@@ -42,5 +42,5 @@ runs:
     - ${{ inputs.branch }}
     - --commit
     - ${{ inputs.commit }}
-    - ${{ inputs.gh-code-scanning == "true" && '--gh-code-scanning' || '' }}
-    - ${{ inputs.auto-remediation == "true" && '--auto-fix' || '' }}
+    - ${{ inputs.gh-code-scanning == 'true' && '--gh-code-scanning' || '' }}
+    - ${{ inputs.auto-remediation == 'true' && '--auto-fix' || '' }}
