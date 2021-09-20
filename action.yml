@@ -22,6 +22,9 @@ inputs:
   auto-remediation:
     description: enable auto-remediation
     default: true
+  export-to:
+    description: path to export results to
+    default: result.json
 
 branding:
   color: blue
@@ -42,5 +45,8 @@ runs:
     - ${{ inputs.branch }}
     - --commit
     - ${{ inputs.commit }}
+    - --json
+    - ${{ inputs.export-to }}
     - ${{ inputs.gh-code-scanning == 'true' && '--gh-code-scanning' || '' }}
     - ${{ inputs.auto-remediation == 'true' && '--auto-fix' || '' }}
+  
