@@ -25,6 +25,9 @@ inputs:
   export-to:
     description: path to export results to
     default: result.json
+  no-exit-error:
+    description: don't exist with error
+    default: false
 
 branding:
   color: blue
@@ -49,3 +52,4 @@ runs:
     - ${{ inputs.export-to }}
     - ${{ inputs.gh-code-scanning == 'true' && '--gh-code-scanning' || '' }}
     - ${{ inputs.auto-remediation == 'true' && '--auto-fix' || '' }}
+    - ${{ inputs.no-exit-error == 'true' && '--no-exit-error' || '' }}
